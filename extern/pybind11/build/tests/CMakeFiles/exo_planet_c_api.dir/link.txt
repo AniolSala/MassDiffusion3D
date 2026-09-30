@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -Os -DNDEBUG -flto -shared  -o exo_planet_c_api.cpython-312-x86_64-linux-gnu.so CMakeFiles/exo_planet_c_api.dir/exo_planet_c_api.cpp.o  -lstdc++fs 

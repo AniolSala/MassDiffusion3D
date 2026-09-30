@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -Os -DNDEBUG -flto -shared  -o home_planet_very_lonely_traveler.cpython-312-x86_64-linux-gnu.so CMakeFiles/home_planet_very_lonely_traveler.dir/home_planet_very_lonely_traveler.cpp.o  -lstdc++fs 

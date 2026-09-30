@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -Os -DNDEBUG -flto -shared  -o cross_module_interleaved_error_already_set.cpython-312-x86_64-linux-gnu.so CMakeFiles/cross_module_interleaved_error_already_set.dir/cross_module_interleaved_error_already_set.cpp.o  -lstdc++fs 

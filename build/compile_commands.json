@@ -1,0 +1,692 @@
+[
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/coefficients_computation_gaussian.cpp.o -c /home/aniol/repos/AS/src/coefficients_computation_gaussian.cpp",
+  "file": "/home/aniol/repos/AS/src/coefficients_computation_gaussian.cpp",
+  "output": "CMakeFiles/main.dir/src/coefficients_computation_gaussian.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/comp_utils.cpp.o -c /home/aniol/repos/AS/src/comp_utils.cpp",
+  "file": "/home/aniol/repos/AS/src/comp_utils.cpp",
+  "output": "CMakeFiles/main.dir/src/comp_utils.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_coefficients.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_coefficients.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_coefficients_gauss_jacobi.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_gauss_jacobi.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_gauss_jacobi.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_coefficients_gauss_jacobi.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_coefficients_gaussian.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_gaussian.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_gaussian.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_coefficients_gaussian.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_coefficients_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_radial.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_coefficients_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_gram_gauss_jacobi.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_gauss_jacobi.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_gauss_jacobi.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_gram_gauss_jacobi.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_gram_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_radial.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_gram_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_gram_ultraspherical.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_ultraspherical.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_ultraspherical.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_gram_ultraspherical.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_norms.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_norms.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_norms.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_norms.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_norms_boundary.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_norms_boundary.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_norms_boundary.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_norms_boundary.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_radial.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_radial_block.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_radial_block.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_radial_block.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_radial_block.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_rhs.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_rhs.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_rhs_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_radial.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_rhs_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_rhs_representer.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_representer.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_representer.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_rhs_representer.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_rhs_representer_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_representer_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_representer_radial.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_rhs_representer_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/finite_peclet_roots.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_roots.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_roots.cpp",
+  "output": "CMakeFiles/main.dir/src/finite_peclet_roots.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/io_data.cpp.o -c /home/aniol/repos/AS/src/io_data.cpp",
+  "file": "/home/aniol/repos/AS/src/io_data.cpp",
+  "output": "CMakeFiles/main.dir/src/io_data.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/math_functions.cpp.o -c /home/aniol/repos/AS/src/math_functions.cpp",
+  "file": "/home/aniol/repos/AS/src/math_functions.cpp",
+  "output": "CMakeFiles/main.dir/src/math_functions.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/nusselt_postprocessing.cpp.o -c /home/aniol/repos/AS/src/nusselt_postprocessing.cpp",
+  "file": "/home/aniol/repos/AS/src/nusselt_postprocessing.cpp",
+  "output": "CMakeFiles/main.dir/src/nusselt_postprocessing.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/pseudo_products.cpp.o -c /home/aniol/repos/AS/src/pseudo_products.cpp",
+  "file": "/home/aniol/repos/AS/src/pseudo_products.cpp",
+  "output": "CMakeFiles/main.dir/src/pseudo_products.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/qep_computations.cpp.o -c /home/aniol/repos/AS/src/qep_computations.cpp",
+  "file": "/home/aniol/repos/AS/src/qep_computations.cpp",
+  "output": "CMakeFiles/main.dir/src/qep_computations.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/roots_and_norms_calculations.cpp.o -c /home/aniol/repos/AS/src/roots_and_norms_calculations.cpp",
+  "file": "/home/aniol/repos/AS/src/roots_and_norms_calculations.cpp",
+  "output": "CMakeFiles/main.dir/src/roots_and_norms_calculations.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/shifted_jacobi_basis.cpp.o -c /home/aniol/repos/AS/src/shifted_jacobi_basis.cpp",
+  "file": "/home/aniol/repos/AS/src/shifted_jacobi_basis.cpp",
+  "output": "CMakeFiles/main.dir/src/shifted_jacobi_basis.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/shifted_jacobi_basis_radial.cpp.o -c /home/aniol/repos/AS/src/shifted_jacobi_basis_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/shifted_jacobi_basis_radial.cpp",
+  "output": "CMakeFiles/main.dir/src/shifted_jacobi_basis_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\"   -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/main.dir/src/main.cpp.o -c /home/aniol/repos/AS/src/main.cpp",
+  "file": "/home/aniol/repos/AS/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/coefficients_computation_gaussian.cpp.o -c /home/aniol/repos/AS/src/coefficients_computation_gaussian.cpp",
+  "file": "/home/aniol/repos/AS/src/coefficients_computation_gaussian.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/coefficients_computation_gaussian.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/comp_utils.cpp.o -c /home/aniol/repos/AS/src/comp_utils.cpp",
+  "file": "/home/aniol/repos/AS/src/comp_utils.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/comp_utils.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients_gauss_jacobi.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_gauss_jacobi.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_gauss_jacobi.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients_gauss_jacobi.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients_gaussian.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_gaussian.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_gaussian.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients_gaussian.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_radial.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_coefficients_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_gram_gauss_jacobi.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_gauss_jacobi.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_gauss_jacobi.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_gram_gauss_jacobi.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_gram_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_radial.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_gram_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_gram_ultraspherical.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_ultraspherical.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_ultraspherical.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_gram_ultraspherical.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_norms.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_norms.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_norms.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_norms.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_norms_boundary.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_norms_boundary.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_norms_boundary.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_norms_boundary.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_radial.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_radial_block.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_radial_block.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_radial_block.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_radial_block.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_radial.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs_representer.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_representer.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_representer.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs_representer.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs_representer_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_representer_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_representer_radial.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_rhs_representer_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_roots.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_roots.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_roots.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/finite_peclet_roots.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/io_data.cpp.o -c /home/aniol/repos/AS/src/io_data.cpp",
+  "file": "/home/aniol/repos/AS/src/io_data.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/io_data.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/math_functions.cpp.o -c /home/aniol/repos/AS/src/math_functions.cpp",
+  "file": "/home/aniol/repos/AS/src/math_functions.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/math_functions.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/nusselt_postprocessing.cpp.o -c /home/aniol/repos/AS/src/nusselt_postprocessing.cpp",
+  "file": "/home/aniol/repos/AS/src/nusselt_postprocessing.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/nusselt_postprocessing.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/pseudo_products.cpp.o -c /home/aniol/repos/AS/src/pseudo_products.cpp",
+  "file": "/home/aniol/repos/AS/src/pseudo_products.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/pseudo_products.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/pybind.cpp.o -c /home/aniol/repos/AS/src/pybind.cpp",
+  "file": "/home/aniol/repos/AS/src/pybind.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/pybind.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/qep_computations.cpp.o -c /home/aniol/repos/AS/src/qep_computations.cpp",
+  "file": "/home/aniol/repos/AS/src/qep_computations.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/qep_computations.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/roots_and_norms_calculations.cpp.o -c /home/aniol/repos/AS/src/roots_and_norms_calculations.cpp",
+  "file": "/home/aniol/repos/AS/src/roots_and_norms_calculations.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/roots_and_norms_calculations.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/shifted_jacobi_basis.cpp.o -c /home/aniol/repos/AS/src/shifted_jacobi_basis.cpp",
+  "file": "/home/aniol/repos/AS/src/shifted_jacobi_basis.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/shifted_jacobi_basis.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DMassDiffusion3Dcpp_EXPORTS -I/home/aniol/repos/AS/src -isystem /home/aniol/repos/AS/extern/pybind11/include -isystem /usr/include/python3.12  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fPIC -fvisibility=hidden -flto -fno-fat-lto-objects -fopenmp -o CMakeFiles/MassDiffusion3Dcpp.dir/src/shifted_jacobi_basis_radial.cpp.o -c /home/aniol/repos/AS/src/shifted_jacobi_basis_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/shifted_jacobi_basis_radial.cpp",
+  "output": "CMakeFiles/MassDiffusion3Dcpp.dir/src/shifted_jacobi_basis_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/coefficients_computation_gaussian.cpp.o -c /home/aniol/repos/AS/src/coefficients_computation_gaussian.cpp",
+  "file": "/home/aniol/repos/AS/src/coefficients_computation_gaussian.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/coefficients_computation_gaussian.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/comp_utils.cpp.o -c /home/aniol/repos/AS/src/comp_utils.cpp",
+  "file": "/home/aniol/repos/AS/src/comp_utils.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/comp_utils.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients_gauss_jacobi.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_gauss_jacobi.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_gauss_jacobi.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients_gauss_jacobi.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients_gaussian.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_gaussian.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_gaussian.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients_gaussian.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_coefficients_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_coefficients_radial.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_coefficients_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_gram_gauss_jacobi.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_gauss_jacobi.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_gauss_jacobi.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_gram_gauss_jacobi.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_gram_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_radial.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_gram_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_gram_ultraspherical.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_gram_ultraspherical.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_gram_ultraspherical.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_gram_ultraspherical.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_norms.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_norms.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_norms.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_norms.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_norms_boundary.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_norms_boundary.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_norms_boundary.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_norms_boundary.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_radial.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_radial_block.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_radial_block.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_radial_block.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_radial_block.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_radial.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs_representer.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_representer.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_representer.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs_representer.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs_representer_radial.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_rhs_representer_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_rhs_representer_radial.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_rhs_representer_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/finite_peclet_roots.cpp.o -c /home/aniol/repos/AS/src/finite_peclet_roots.cpp",
+  "file": "/home/aniol/repos/AS/src/finite_peclet_roots.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/finite_peclet_roots.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/io_data.cpp.o -c /home/aniol/repos/AS/src/io_data.cpp",
+  "file": "/home/aniol/repos/AS/src/io_data.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/io_data.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/math_functions.cpp.o -c /home/aniol/repos/AS/src/math_functions.cpp",
+  "file": "/home/aniol/repos/AS/src/math_functions.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/math_functions.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/nusselt_postprocessing.cpp.o -c /home/aniol/repos/AS/src/nusselt_postprocessing.cpp",
+  "file": "/home/aniol/repos/AS/src/nusselt_postprocessing.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/nusselt_postprocessing.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/pseudo_products.cpp.o -c /home/aniol/repos/AS/src/pseudo_products.cpp",
+  "file": "/home/aniol/repos/AS/src/pseudo_products.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/pseudo_products.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/qep_computations.cpp.o -c /home/aniol/repos/AS/src/qep_computations.cpp",
+  "file": "/home/aniol/repos/AS/src/qep_computations.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/qep_computations.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/roots_and_norms_calculations.cpp.o -c /home/aniol/repos/AS/src/roots_and_norms_calculations.cpp",
+  "file": "/home/aniol/repos/AS/src/roots_and_norms_calculations.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/roots_and_norms_calculations.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/shifted_jacobi_basis.cpp.o -c /home/aniol/repos/AS/src/shifted_jacobi_basis.cpp",
+  "file": "/home/aniol/repos/AS/src/shifted_jacobi_basis.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/shifted_jacobi_basis.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/src/shifted_jacobi_basis_radial.cpp.o -c /home/aniol/repos/AS/src/shifted_jacobi_basis_radial.cpp",
+  "file": "/home/aniol/repos/AS/src/shifted_jacobi_basis_radial.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/src/shifted_jacobi_basis_radial.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/tinytest_main.cpp.o -c /home/aniol/repos/AS/tests/tinytest_main.cpp",
+  "file": "/home/aniol/repos/AS/tests/tinytest_main.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/tinytest_main.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_mode_cutoff.cpp.o -c /home/aniol/repos/AS/tests/test_mode_cutoff.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_mode_cutoff.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_mode_cutoff.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_psinm_r.cpp.o -c /home/aniol/repos/AS/tests/test_psinm_r.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_psinm_r.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_psinm_r.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_gaussian_integration.cpp.o -c /home/aniol/repos/AS/tests/test_gaussian_integration.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_gaussian_integration.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_gaussian_integration.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_compute_coefficients.cpp.o -c /home/aniol/repos/AS/tests/test_compute_coefficients.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_compute_coefficients.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_compute_coefficients.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_parseval_identity.cpp.o -c /home/aniol/repos/AS/tests/test_parseval_identity.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_parseval_identity.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_parseval_identity.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_flux_calculation.cpp.o -c /home/aniol/repos/AS/tests/test_flux_calculation.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_flux_calculation.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_flux_calculation.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_solution_at_planes.cpp.o -c /home/aniol/repos/AS/tests/test_solution_at_planes.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_solution_at_planes.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_solution_at_planes.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_solution_at_planes_variable_points.cpp.o -c /home/aniol/repos/AS/tests/test_solution_at_planes_variable_points.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_solution_at_planes_variable_points.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_solution_at_planes_variable_points.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_group_points_in_planes.cpp.o -c /home/aniol/repos/AS/tests/test_group_points_in_planes.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_group_points_in_planes.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_group_points_in_planes.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_get_solution_cloud_of_points.cpp.o -c /home/aniol/repos/AS/tests/test_get_solution_cloud_of_points.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_get_solution_cloud_of_points.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_get_solution_cloud_of_points.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_coeff_zero_identity_highm.cpp.o -c /home/aniol/repos/AS/tests/test_coeff_zero_identity_highm.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_coeff_zero_identity_highm.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_coeff_zero_identity_highm.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_dpsinm_r_2_underflow.cpp.o -c /home/aniol/repos/AS/tests/test_dpsinm_r_2_underflow.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_dpsinm_r_2_underflow.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_dpsinm_r_2_underflow.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_graetz_eigenvalues.cpp.o -c /home/aniol/repos/AS/tests/test_graetz_eigenvalues.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_graetz_eigenvalues.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_graetz_eigenvalues.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_graetz_coefficients.cpp.o -c /home/aniol/repos/AS/tests/test_graetz_coefficients.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_graetz_coefficients.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_graetz_coefficients.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_graetz_solution.cpp.o -c /home/aniol/repos/AS/tests/test_graetz_solution.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_graetz_solution.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_graetz_solution.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_nusselt_number.cpp.o -c /home/aniol/repos/AS/tests/test_nusselt_number.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_nusselt_number.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_nusselt_number.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_set_get_max_root.cpp.o -c /home/aniol/repos/AS/tests/test_set_get_max_root.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_set_get_max_root.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_set_get_max_root.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_pseudoproduct_measure.cpp.o -c /home/aniol/repos/AS/tests/test_pseudoproduct_measure.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_pseudoproduct_measure.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_pseudoproduct_measure.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet.cpp.o -c /home/aniol/repos/AS/tests/test_finite_peclet.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_finite_peclet.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_radial_block.cpp.o -c /home/aniol/repos/AS/tests/test_finite_peclet_radial_block.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_finite_peclet_radial_block.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_radial_block.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_coefficients_gaussian.cpp.o -c /home/aniol/repos/AS/tests/test_finite_peclet_coefficients_gaussian.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_finite_peclet_coefficients_gaussian.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_coefficients_gaussian.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_coefficients_gauss_jacobi.cpp.o -c /home/aniol/repos/AS/tests/test_finite_peclet_coefficients_gauss_jacobi.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_finite_peclet_coefficients_gauss_jacobi.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_coefficients_gauss_jacobi.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_norms_boundary.cpp.o -c /home/aniol/repos/AS/tests/test_finite_peclet_norms_boundary.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_finite_peclet_norms_boundary.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_finite_peclet_norms_boundary.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_qep.cpp.o -c /home/aniol/repos/AS/tests/test_qep.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_qep.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_qep.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_fp_gram_backends.cpp.o -c /home/aniol/repos/AS/tests/test_fp_gram_backends.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_fp_gram_backends.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_fp_gram_backends.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_inlet_projection_norm.cpp.o -c /home/aniol/repos/AS/tests/test_inlet_projection_norm.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_inlet_projection_norm.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_inlet_projection_norm.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_blurriness.cpp.o -c /home/aniol/repos/AS/tests/test_blurriness.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_blurriness.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_blurriness.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_fp_gram_node_rule.cpp.o -c /home/aniol/repos/AS/tests/test_fp_gram_node_rule.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_fp_gram_node_rule.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_fp_gram_node_rule.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_fp_rhs.cpp.o -c /home/aniol/repos/AS/tests/test_fp_rhs.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_fp_rhs.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_fp_rhs.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_shifted_jacobi_basis.cpp.o -c /home/aniol/repos/AS/tests/test_shifted_jacobi_basis.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_shifted_jacobi_basis.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_shifted_jacobi_basis.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_fp_rhs_representer.cpp.o -c /home/aniol/repos/AS/tests/test_fp_rhs_representer.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_fp_rhs_representer.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_fp_rhs_representer.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_fp_rhs_cross_validation.cpp.o -c /home/aniol/repos/AS/tests/test_fp_rhs_cross_validation.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_fp_rhs_cross_validation.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_fp_rhs_cross_validation.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_fp_radial_projection.cpp.o -c /home/aniol/repos/AS/tests/test_fp_radial_projection.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_fp_radial_projection.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_fp_radial_projection.cpp.o"
+},
+{
+  "directory": "/home/aniol/repos/AS/build",
+  "command": "/usr/bin/c++ -DCDS_NORMS_FILE=\\\"norms_200x200_cpp.txt\\\" -DCDS_ROOTS_FILE=\\\"roots_200x200.txt\\\" -DTEST_DATA_DIR=\\\"/home/aniol/repos/AS\\\" -I/home/aniol/repos/AS/src -I/home/aniol/repos/AS/tests  -fopenmp -O3 -DNDEBUG -std=gnu++17 -fopenmp -o CMakeFiles/cpp_base_tests.dir/tests/test_fp_representer_radial.cpp.o -c /home/aniol/repos/AS/tests/test_fp_representer_radial.cpp",
+  "file": "/home/aniol/repos/AS/tests/test_fp_representer_radial.cpp",
+  "output": "CMakeFiles/cpp_base_tests.dir/tests/test_fp_representer_radial.cpp.o"
+}
+]

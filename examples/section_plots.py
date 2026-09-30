@@ -1,0 +1,1 @@
+from MassDiffusion3Dcpp import CDStratifiedSolution, CDGraetzIsothermalSolution
