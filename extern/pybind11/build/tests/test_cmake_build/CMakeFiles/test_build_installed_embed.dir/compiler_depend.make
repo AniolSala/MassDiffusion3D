@@ -1,2 +1,0 @@
-# Empty custom commands generated dependencies file for test_build_installed_embed.
-# This may be replaced when dependencies are built.

@@ -1,4 +1,4 @@
-# MassDiffusion3DPlus
+# MassDiffusion3D
 
 Semi-analytical solutions of the steady convection–diffusion equation for a passive scalar (concentration or temperature) in a circular tube, including axial diffusion at finite Péclet number. The numerical kernel is implemented in C++17 (OpenMP) and exposed to Python through pybind11 as the module `MassDiffusion3Dcpp`.
 
@@ -123,3 +123,13 @@ The parameters intended to be modified are:
 | `tests/` | C++ unit tests and Python interface tests |
 | `extern/pybind11/` | pybind11 |
 | `build_project.sh`, `CMakeLists.txt` | Build configuration |
+| `LICENSE` | Licence of the code (§9) |
+| `CITATION.cff` | Citation metadata (§8) |
+
+## 8. Citation
+
+If you use this code, please cite the archived release, DOI: XXX, and the accompanying article (reference to be added). The metadata in [CITATION.cff](CITATION.cff) is used by the "Cite this repository" button on GitHub and by the Zenodo archive of each release.
+
+## 9. Licence
+
+The code is distributed under the BSD 3-Clause License; see [LICENSE](LICENSE). The copy of pybind11 in `extern/pybind11/` is distributed under its own BSD-style licence, [extern/pybind11/LICENSE](extern/pybind11/LICENSE).
