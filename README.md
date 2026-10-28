@@ -121,15 +121,28 @@ The parameters intended to be modified are:
 | `src/` | C++ sources: solution classes, eigenvalue and coefficient computations, finite-Péclet solver, pybind11 bindings (`pybind.cpp`) |
 | `examples/` | Usage examples |
 | `tests/` | C++ unit tests and Python interface tests |
+| `data_scripts/` | Scripts that reproduce the figures and tables of the accompanying article (§8) |
+| `data_files/` | Data of the article: the output of those scripts and the finite-element results (§8) |
+| `figures/` | Figures written by the scripts of `data_scripts/` (created when they run; not tracked) |
 | `extern/pybind11/` | pybind11 |
 | `build_project.sh`, `CMakeLists.txt` | Build configuration |
-| `LICENSE` | Licence of the code (§9) |
-| `CITATION.cff` | Citation metadata (§8) |
+| `LICENSE` | Licence of the code (§10) |
+| `CITATION.cff` | Citation metadata (§9) |
 
-## 8. Citation
+## 8. Figures and data of the article
 
-If you use this code, please cite the archived release, DOI: XXX, and the accompanying article (reference to be added). The metadata in [CITATION.cff](CITATION.cff) is used by the "Cite this repository" button on GitHub and by the Zenodo archive of each release.
+The folder [data_scripts/](data_scripts) holds the scripts that produce the figures and tables of the accompanying article, and [data_files/](data_files) the data behind them. Each script stores its data in `data_files/` and its figure in `figures/`, and on later runs redraws the figure from the stored data instead of recomputing it. For example, from the repository root:
 
-## 9. Licence
+```sh
+PYTHONPATH=. python3 data_scripts/nusselt_curves.py
+```
 
-The code is distributed under the BSD 3-Clause License; see [LICENSE](LICENSE). The copy of pybind11 in `extern/pybind11/` is distributed under its own BSD-style licence, [extern/pybind11/LICENSE](extern/pybind11/LICENSE).
+The figures that compare the series with finite-element solutions are provided with their data only, in `data_files/fem/`, since the finite-element computations need Kratos Multiphysics. The correspondence between figures, scripts and data files, the settings of the scripts and the requirements are given in [data_scripts/README.md](data_scripts/README.md), and the content of every data file in [data_files/README.md](data_files/README.md).
+
+## 9. Citation
+
+If you use this code or these data, please cite the Zenodo archive, DOI: [10.5281/zenodo.23538140](https://doi.org/10.5281/zenodo.23538140), and the accompanying article (reference to be added once it is published). This DOI always resolves to the latest release; each release also has its own DOI, listed on the Zenodo page. The metadata in [CITATION.cff](CITATION.cff) is used by the "Cite this repository" button on GitHub and by the Zenodo archive of each release.
+
+## 10. Licence
+
+The code, including the scripts in `data_scripts/`, is distributed under the BSD 3-Clause License; see [LICENSE](LICENSE). The data in `data_files/` are distributed under the [Creative Commons Attribution 4.0 International licence (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). The copy of pybind11 in `extern/pybind11/` is distributed under its own BSD-style licence, [extern/pybind11/LICENSE](extern/pybind11/LICENSE).

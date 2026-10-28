@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "configuration_lock": {
+    "hash": "86cfd1ca987d36bf",
+    "source_file": "bare_vs_finite_peclet_vs_x_97012537d5087dad.h5"
+  },
+  "fem": {
+    "meshes": [
+      {
+        "h": 0.02,
+        "axial_h": 0.02,
+        "number_of_axial_layers": 100,
+        "number_of_x_planes": 101,
+        "number_of_nodes_per_x_plane": 9342,
+        "number_of_nodes": 943542,
+        "number_of_elements": 5510100
+      },
+      {
+        "h": 0.05,
+        "axial_h": 0.05,
+        "number_of_axial_layers": 40,
+        "number_of_x_planes": 41,
+        "number_of_nodes_per_x_plane": 1550,
+        "number_of_nodes": 63550,
+        "number_of_elements": 356640
+      },
+      {
+        "h": 0.1,
+        "axial_h": 0.1,
+        "number_of_axial_layers": 20,
+        "number_of_x_planes": 21,
+        "number_of_nodes_per_x_plane": 411,
+        "number_of_nodes": 8631,
+        "number_of_elements": 45420
+      }
+    ]
+  },
+  "analytical_truncation": {
+    "Graetz": {
+      "max_root": 200.0,
+      "number_of_modes": 50
+    },
+    "Stratified": {
+      "max_root": 200.0,
+      "number_of_modes": 2550,
+      "layer_positions": [
+        -0.55,
+        0.45
+      ]
+    }
+  },
+  "series_scenarios": [
+    {
+      "scenario": "best",
+      "label": "Series (With Cutoff)",
+      "layout": "concentric",
+      "mode_cutoff_relative_tolerance": 1e-10
+    },
+    {
+      "scenario": "best_no_cutoff",
+      "label": "Series (Without Cutoff)",
+      "layout": "concentric",
+      "mode_cutoff_relative_tolerance": null
+    }
+  ],
+  "fem_error": {
+    "definition": "E = sqrt(sum_i (psi_ref_i - psi_h_i)^2) / sqrt(sum_i psi_ref_i^2), i over the interior nodes of the FEM mesh (not on the inlet plane, the outlet plane or the wall)",
+    "node_set": "interior: excludes the inlet plane, the outlet plane and the wall",
+    "reference": {
+      "max_root": 400.0,
+      "mode_cutoff": "disabled",
+      "number_of_modes": {
+        "Graetz": [
+          100
+        ],
+        "Stratified": [
+          10100
+        ]
+      }
+    },
+    "values": [
+      {
+        "problem": "Graetz",
+        "peclet": 10.0,
+        "h": 0.1,
+        "relative_l2_error": 0.008460423171595184
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 10.0,
+        "h": 0.05,
+        "relative_l2_error": 0.003363719630729608
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 10.0,
+        "h": 0.02,
+        "relative_l2_error": 0.0014412218295026707
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 100.0,
+        "h": 0.1,
+        "relative_l2_error": 0.008004199646548884
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 100.0,
+        "h": 0.05,
+        "relative_l2_error": 0.002814018406672681
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 100.0,
+        "h": 0.02,
+        "relative_l2_error": 0.0008999637444991101
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 1000.0,
+        "h": 0.1,
+        "relative_l2_error": 0.010152423924876962
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 1000.0,
+        "h": 0.05,
+        "relative_l2_error": 0.005190848095469183
+      },
+      {
+        "problem": "Graetz",
+        "peclet": 1000.0,
+        "h": 0.02,
+        "relative_l2_error": 0.002149856543199311
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 10.0,
+        "h": 0.1,
+        "relative_l2_error": 0.01131481189198953
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 10.0,
+        "h": 0.05,
+        "relative_l2_error": 0.005117040328468329
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 10.0,
+        "h": 0.02,
+        "relative_l2_error": 0.0023137011338530975
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 100.0,
+        "h": 0.1,
+        "relative_l2_error": 0.016938851411998086
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 100.0,
+        "h": 0.05,
+        "relative_l2_error": 0.006440672520558761
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 100.0,
+        "h": 0.02,
+        "relative_l2_error": 0.0023345884559924806
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 1000.0,
+        "h": 0.1,
+        "relative_l2_error": 0.039273428765129424
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 1000.0,
+        "h": 0.05,
+        "relative_l2_error": 0.016447862774700398
+      },
+      {
+        "problem": "Stratified",
+        "peclet": 1000.0,
+        "h": 0.02,
+        "relative_l2_error": 0.005589916782654556
+      }
+    ]
+  }
+}

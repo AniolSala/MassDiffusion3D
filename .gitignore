@@ -4,3 +4,4 @@ __pycache__/
 build/
 bin/
 extern/pybind11/build/
+figures/

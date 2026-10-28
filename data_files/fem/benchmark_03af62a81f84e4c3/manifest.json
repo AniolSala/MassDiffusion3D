@@ -1,0 +1,190 @@
+{
+  "config_lock": {
+    "source_file": "bare_vs_finite_peclet_vs_x_97012537d5087dad.h5",
+    "locked_values": {
+      "problems": [
+        "stratified_layers",
+        "graetz"
+      ],
+      "peclet_values": [
+        10.0,
+        100.0,
+        1000.0
+      ],
+      "mesh_sizes": [
+        0.1,
+        0.05,
+        0.02
+      ],
+      "radius": 1.0,
+      "tube_length": 2.0,
+      "reynolds": 1.0,
+      "zi_layers": [
+        -0.55,
+        0.45
+      ],
+      "ui_layers": [
+        1.0,
+        0.3,
+        0.0
+      ],
+      "analytical_settings": {
+        "fp_max_iter": 20,
+        "fp_tolerance": 1e-06,
+        "gram_options": {
+          "cap_quad_margin": 20,
+          "method": "gauss_jacobi_qr",
+          "minimum_factor": 2,
+          "order_check": 0,
+          "oversampling_factor": 2,
+          "oversampling_margin": 20
+        },
+        "max_root": 200.0,
+        "number_of_gauss_points": 400,
+        "projection_space": "weighted",
+        "rhs_options": {
+          "method": "auto",
+          "representer_margin": 40
+        }
+      },
+      "set_cutoff": 0,
+      "cutoff_value": 1e-10,
+      "impose_exact_fluid": 1,
+      "max_coupling_iterations": 1,
+      "apply_directional_do_nothing_condition": 0,
+      "use_outlet_consistent_flux_BC": 1,
+      "use_outlet_inflow_contribution": 0
+    },
+    "lock_hash": "86cfd1ca987d36bf",
+    "ignored_keys": [
+      "variants",
+      "x_physical_values",
+      "x_physical_min",
+      "x_physical_max",
+      "number_of_x_values",
+      "min_elements_downstream",
+      "max_outlet_fraction",
+      "tube_length_minimum",
+      "max_tube_len",
+      "disk_radius",
+      "h_eval",
+      "script_version",
+      "extension_path",
+      "fem_metadata"
+    ]
+  },
+  "benchmark_hash": "03af62a81f84e4c3",
+  "benchmark_configuration": {
+    "lock_hash": "86cfd1ca987d36bf",
+    "mesh_sizes": [
+      0.02,
+      0.05,
+      0.1
+    ],
+    "series_scenarios": {
+      "best": {
+        "layout": "concentric",
+        "cutoff_tol": 1e-10
+      },
+      "best_no_cutoff": {
+        "layout": "concentric",
+        "cutoff_tol": 0.0
+      }
+    },
+    "include_fem": true,
+    "error_reference": {
+      "max_root": 400.0,
+      "apply_mode_cutoff": false
+    }
+  },
+  "machine": {
+    "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "numpy": "2.4.6",
+    "logical_cpus": 16,
+    "governor": "powersave",
+    "turbo_enabled": true,
+    "memory_available_bytes": 27645243392,
+    "frequency": {
+      "min_mhz": 4599.953,
+      "mean_mhz": 4600.0143125,
+      "max_mhz": 4600.046
+    },
+    "cpu_model": "11th Gen Intel(R) Core(TM) i9-11900 @ 2.50GHz",
+    "physical_cores": 8,
+    "loadavg": [
+      0.45703125,
+      0.4208984375,
+      0.375
+    ]
+  },
+  "meshes": {
+    "0.1": {
+      "processes_per_cell": 8,
+      "thread_counts": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "0.05": {
+      "processes_per_cell": 5,
+      "thread_counts": [
+        4,
+        8,
+        16
+      ]
+    },
+    "0.02": {
+      "processes_per_cell": 5,
+      "thread_counts": [
+        4,
+        8,
+        16
+      ]
+    }
+  },
+  "error_reference": {
+    "max_root": 400.0,
+    "apply_mode_cutoff": false,
+    "threads": 16,
+    "settings": {
+      "analytical_settings": {
+        "fp_max_iter": 20,
+        "fp_tolerance": 1e-06,
+        "gram_options": {
+          "cap_quad_margin": 20,
+          "method": "gauss_jacobi_qr",
+          "minimum_factor": 2,
+          "order_check": 0,
+          "oversampling_factor": 2,
+          "oversampling_margin": 20
+        },
+        "max_root": 400.0,
+        "number_of_gauss_points": 400,
+        "projection_space": "weighted",
+        "rhs_options": {
+          "method": "auto",
+          "representer_margin": 40
+        }
+      },
+      "zi_layers": [
+        -0.55,
+        0.45
+      ],
+      "ui_layers": [
+        1.0,
+        0.3,
+        0.0
+      ]
+    }
+  },
+  "processes_planned": 1260,
+  "error_cases": 18,
+  "processes_recorded": 1260,
+  "failures": 0,
+  "results": "results.json",
+  "generated_at": "2026-10-20T16:01:20+0200"
+}

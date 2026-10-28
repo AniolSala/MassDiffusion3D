@@ -6,7 +6,9 @@ abstract: >-
   Semi-analytical solutions of the steady convection-diffusion equation for a
   passive scalar (concentration or temperature) in a circular tube, including
   axial diffusion at finite Péclet number. The numerical kernel is implemented
-  in C++17 (OpenMP) and exposed to Python through pybind11.
+  in C++17 (OpenMP) and exposed to Python through pybind11. The release also
+  holds the scripts and the data behind the figures and tables of the
+  accompanying article.
 authors:
   - given-names: Aniol
     family-names: Sala Pascual
@@ -20,7 +22,8 @@ authors:
     # orcid: "https://orcid.org/0000-0000-0000-0000"
 repository-code: "https://github.com/AniolSala/MassDiffusion3D"
 license: BSD-3-Clause
-version: 1.0.0
+version: 1.1.0
+doi: 10.5281/zenodo.23538140
 keywords:
   - extended Graetz problem
   - convection-diffusion
