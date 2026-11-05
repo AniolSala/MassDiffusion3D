@@ -95,7 +95,16 @@ MIN_LEVEL = 5.0                       # smallest cutoff on the x axis (a log axi
 ENFORCE_BALL_TRUNCATION = True        # drop cutoffs the shipped root table cannot fill (see below)
 FORCE_RECOMPUTE = False               # False: reuse DATA_FILE when its configuration matches
 USE_TEX = True                        # render labels with a real LaTeX installation
-PANEL_SIZE = (9.0, 6.5)               # inches per subplot; four values give a 2 x 2 grid, others a column
+# Printed size (the article's text width is 160 mm), so the sizes below are printed points.
+FIGURE_WIDTH_MM = 160.0
+FIGURE_HEIGHT_MM = 132.0
+LABEL_FONT_SIZE = 10.5
+TICK_FONT_SIZE = 9.5
+LEGEND_FONT_SIZE = 9.5
+AXES_LINE_WIDTH = 0.8
+# Sub- and superscripts at 9 pt keep every printed capital and numeral at least 2 mm high.
+TEX_PREAMBLE = "".join(rf"\DeclareMathSizes{{{size:g}}}{{{size:g}}}{{9}}{{9}}"
+                       for size in (9, 9.5, 10, 10.5, 11, 12))
 
 # Solver-side controls, applied by configure_solver to every solver this script builds.
 # The projection space is selected explicitly; the other values are solver defaults.
@@ -146,10 +155,12 @@ GRAETZ_CASE = (1.0, 0.0)
 # Okabe & Ito (2008): separable under deuteranopia, protanopia and tritanopia.
 OKABE_ITO = ("#0072B2", "#D55E00", "#009E73", "#CC79A7", "#E69F00", "#56B4E9")
 
-# Colour encodes the inlet configuration, line style and marker encode the model.
-BARE_STYLE = dict(linestyle=(0, (5, 2)), marker="o", markerfacecolor="none",
-                  linewidth=3.0, markersize=11, markeredgewidth=1.6, alpha=0.42)
-FP_STYLE = dict(linestyle="-", marker="s", linewidth=1.7, markersize=6.5)
+# Colour encodes the inlet configuration, line style and marker encode the model. The
+# bare curves are drawn in a lighter tint of the same colour, larger and underneath.
+BARE_STYLE = dict(linestyle=(0, (4, 1.5)), marker="o", linewidth=1.4, markersize=5.0,
+                  markeredgewidth=0.0)
+FP_STYLE = dict(linestyle="-", marker="s", linewidth=1.0, markersize=3.6, markeredgewidth=0.0)
+BARE_TINT = 0.5                       # fraction of white mixed into the bare-curve colour
 
 # Power-law guides: (slope, label, anchor case, which curve, vertical offset factor).
 # Each carries its own dash pattern and grey below so the three stay distinguishable.
@@ -159,10 +170,17 @@ REFERENCE_SLOPES = (
     (-2.0, r"$\mathcal{O}(\beta_K^{-2})$", "graetz", "finite_peclet", 1.9),
 )
 GUIDE_STYLES = (
-    dict(color="#8a8a8a", linestyle=(0, (1, 2)), linewidth=1.4),
-    dict(color="#606060", linestyle=(0, (6, 2, 1, 2)), linewidth=1.4),
-    dict(color="#303030", linestyle=(0, (9, 3)), linewidth=1.4),
+    dict(color="#707070", linestyle=(0, (1, 1.5)), linewidth=0.9),
+    dict(color="#505050", linestyle=(0, (6, 2, 1, 2)), linewidth=0.9),
+    dict(color="#202020", linestyle=(0, (8, 2.5)), linewidth=0.9),
 )
+
+
+def tint(colour: str, fraction: float) -> tuple[float, float, float]:
+    """Mix a colour with white; fraction = 0 keeps it, 1 gives white."""
+    from matplotlib.colors import to_rgb
+
+    return tuple(channel + (1.0 - channel) * fraction for channel in to_rgb(colour))
 
 
 # ---------------------------------------------------------------------------
@@ -453,8 +471,10 @@ def draw_panel(axis, curves: list[Curve], peclet: float) -> list:
     by_key = {curve.key: curve for curve in curves}
     for curve in curves:
         if curve.bare is not None:
-            axis.plot(curve.levels, curve.bare, color=curve.colour, **BARE_STYLE)
-        axis.plot(curve.levels, curve.finite_peclet[peclet], color=curve.colour, **FP_STYLE)
+            axis.plot(curve.levels, curve.bare, color=tint(curve.colour, BARE_TINT), zorder=2,
+                      **BARE_STYLE)
+        axis.plot(curve.levels, curve.finite_peclet[peclet], color=curve.colour, zorder=3,
+                  **FP_STYLE)
 
     guide_handles = []
     guides = REFERENCE_SLOPES if SOLVER_CONFIG["projection_space"] == "weighted" else ()
@@ -463,18 +483,19 @@ def draw_panel(axis, curves: list[Curve], peclet: float) -> list:
         guide_handles.append(reference_guide(axis, by_key[key].levels, errors, slope,
                                              offset, label, style))
 
-    axis.set_title(rf"$\mathrm{{Pe}} = {peclet:g}$")
+    axis.text(0.97, 0.95, rf"$\mathrm{{Pe}} = {peclet:g}$", transform=axis.transAxes,
+              ha="right", va="top", fontsize=LABEL_FONT_SIZE,
+              bbox=dict(boxstyle="square,pad=0.15", facecolor="white", edgecolor="none"))
     axis.set_xscale("log")
     axis.set_yscale("log")
     axis.xaxis.set_major_locator(FixedLocator([5, 10, 20, 50, 100, 200, 400]))
     axis.xaxis.set_major_formatter(ScalarFormatter())
     axis.xaxis.set_minor_formatter(NullFormatter())
-    axis.grid(True, which="major", linestyle="--", linewidth=0.9, alpha=0.4)
-    axis.grid(True, which="minor", linestyle=":", linewidth=0.5, alpha=0.2)
+    axis.grid(True, which="major", linestyle="--", linewidth=0.5, alpha=0.4)
     for spine in axis.spines.values():
-        spine.set_linewidth(1.8)
-    axis.tick_params(which="major", direction="in", top=True, right=True, width=1.6, length=8)
-    axis.tick_params(which="minor", direction="in", top=True, right=True, width=1.1, length=4.5)
+        spine.set_linewidth(AXES_LINE_WIDTH)
+    axis.tick_params(which="major", direction="in", top=True, right=True, width=0.8, length=4)
+    axis.tick_params(which="minor", direction="in", top=True, right=True, width=0.6, length=2.2)
     return guide_handles
 
 
@@ -484,9 +505,9 @@ def make_figure(curves: list[Curve]) -> None:
 
     # A 2 x 2 grid for exactly four values, otherwise one panel on top of the other.
     rows, columns = (2, 2) if len(PECLETS) == 4 else (len(PECLETS), 1)
+    mm = 1.0 / 25.4
     figure, axes = plt.subplots(rows, columns, sharex=True, sharey=True, squeeze=False,
-                                figsize=(PANEL_SIZE[0] * columns, PANEL_SIZE[1] * rows),
-                                layout="constrained")
+                                figsize=(FIGURE_WIDTH_MM * mm, FIGURE_HEIGHT_MM * mm))
     for axis, peclet in zip(axes.flat, PECLETS):
         guide_handles = draw_panel(axis, curves, peclet)
     for axis in axes[-1, :]:
@@ -497,31 +518,36 @@ def make_figure(curves: list[Curve]) -> None:
                         rf"\|f\|^2_{{L^2_{norm}}}$")
 
     # Every panel shares colours and guide styles, so one legend below the grid serves all.
-    colour_handles = [Line2D([0], [0], color=curve.colour, linewidth=3.0, label=curve.label)
+    colour_handles = [Line2D([0], [0], color=curve.colour, linewidth=2.0, label=curve.label)
                       for curve in curves]
+    model_handles = [
+        Line2D([0], [0], color=tint("#404040", BARE_TINT), label=r"Bare ($\kappa = 0$)",
+               **BARE_STYLE),
+        Line2D([0], [0], color="#404040", label=r"Finite P\'eclet", **FP_STYLE),
+    ]
     if columns == 1:
         # Narrow figure: inlets fill the first legend column, guides the second.
         handles, legend_columns = colour_handles + guide_handles, 2 if guide_handles else 1
     elif not guide_handles:
         handles, legend_columns = colour_handles, len(colour_handles)
     else:
-        # Wide figure: inlets on the first legend row, guides on the second. Legend
-        # columns fill top-down, so interleave, padding the shorter list with blanks.
+        # Wide figure: inlets, models and guides on three legend rows. Legend columns
+        # fill top-down, so interleave, padding the shorter lists with blanks.
         blank = Line2D([], [], linestyle="none", label=" ")
-        width = max(len(colour_handles), len(guide_handles))
-        padded = [group + [blank] * (width - len(group))
-                  for group in (colour_handles, guide_handles)]
-        handles, legend_columns = [h for pair in zip(*padded) for h in pair], width
-    # Place the shared legend above the grid; bbox_inches="tight" on savefig includes
-    # the legend even though it is anchored outside the figure canvas.
-    figure.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 1.01),
-                  ncol=legend_columns, framealpha=0.92, labelspacing=0.6, handlelength=1.3,
-                  columnspacing=1.8)
+        groups = (colour_handles, model_handles, guide_handles)
+        width = max(len(group) for group in groups)
+        padded = [group + [blank] * (width - len(group)) for group in groups]
+        handles, legend_columns = [h for column in zip(*padded) for h in column], width
+    figure.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.5, 1.0),
+                  ncol=legend_columns, frameon=False, labelspacing=0.35, handlelength=2.6,
+                  columnspacing=1.2)
+    figure.subplots_adjust(left=0.115, right=0.985, top=0.855, bottom=0.08, wspace=0.06,
+                           hspace=0.06)
 
     FIGURES_DIRECTORY.mkdir(parents=True, exist_ok=True)
     for extension in ("pdf", "png"):
         path = FIGURES_DIRECTORY / f"{OUTPUT_STEM}.{extension}"
-        figure.savefig(path, dpi=300, bbox_inches="tight")
+        figure.savefig(path, dpi=300)
         print(f"  saved {path}")
     plt.close(figure)
 
@@ -531,12 +557,14 @@ def main() -> None:
         "text.usetex": USE_TEX,
         "font.family": "serif",
         "font.serif": ["Computer Modern Roman"],
-        "font.size": 32,
-        "axes.labelsize": 32,
-        "axes.titlesize": 32,
-        "xtick.labelsize": 32,
-        "ytick.labelsize": 32,
-        "legend.fontsize": 32,
+        "font.size": LABEL_FONT_SIZE,
+        "axes.labelsize": LABEL_FONT_SIZE,
+        "axes.titlesize": LABEL_FONT_SIZE,
+        "xtick.labelsize": TICK_FONT_SIZE,
+        "ytick.labelsize": TICK_FONT_SIZE,
+        "legend.fontsize": LEGEND_FONT_SIZE,
+        "axes.linewidth": AXES_LINE_WIDTH,
+        "text.latex.preamble": TEX_PREAMBLE,
     })
 
     curves = get_curves()

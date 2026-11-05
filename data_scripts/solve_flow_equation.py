@@ -123,12 +123,21 @@ USE_TEX = True                         # render labels with a real LaTeX install
 SHOW_RATE_GUIDES = True                # draw the beta^2 ceiling and the Bessel-zero floor per mode
 MAX_CHECK_CURVES = 6                   # cap on curves in the pointwise-check figure
 FIGURES = ("rates",)                   # "rates" is Fig. 1b; also "similarity_ratio", "similarity_residual", "validation"
-LEGEND_LABEL_FONT_SIZE = 32            # font size of the compact n/m legend entries
-PANEL_TITLE_FONT_SIZE = 38             # font size of the Neumann/Dirichlet panel titles
-AXIS_LABEL_FONTSIZE = 42
-TICKS_FONTSIZE = 38
-INSET_TICKS_FONTSIZE = 30
-Y_AXIS_LABEL_PAD = 8
+# The rates figure is drawn at its printed width (the article's 160 mm text width), so
+# the sizes below are printed points.
+RATES_FIGURE_WIDTH_MM = 160.0
+RATES_FIGURE_HEIGHT_MM = 94.0
+LEGEND_LABEL_FONT_SIZE = 9.5           # font size of the compact n/m legend entries
+PANEL_TITLE_FONT_SIZE = 10.5           # font size of the Neumann/Dirichlet panel titles
+AXIS_LABEL_FONTSIZE = 10.5
+TICKS_FONTSIZE = 9.5
+INSET_TICKS_FONTSIZE = 9
+Y_AXIS_LABEL_PAD = 4
+CURVE_LINE_WIDTH = 1.0
+GUIDE_LINE_WIDTH = 0.8
+# Sub- and superscripts at 9 pt keep every printed capital and numeral at least 2 mm high.
+TEX_PREAMBLE = "".join(rf"\DeclareMathSizes{{{size:g}}}{{{size:g}}}{{9}}{{9}}"
+                       for size in (9, 9.5, 10, 10.5, 11, 12))
 
 # Each radial branch gets one dash pattern, shared by its two wall-condition curves and
 # all angular families.  The dash families remain distinguishable in greyscale and at
@@ -658,11 +667,11 @@ def get_plot_data() -> tuple[PlotData, bool]:
 # ---------------------------------------------------------------------------
 # Figures
 # ---------------------------------------------------------------------------
-def save(figure, stem: str) -> None:
+def save(figure, stem: str, tight: bool = True) -> None:
     FIGURES_DIRECTORY.mkdir(parents=True, exist_ok=True)
     for extension in ("pdf", "png"):
         path = FIGURES_DIRECTORY / f"{stem}.{extension}"
-        figure.savefig(path, dpi=300, bbox_inches="tight")
+        figure.savefig(path, dpi=300, bbox_inches="tight" if tight else None)
         print(f"  saved {path}")
 
 
@@ -702,18 +711,18 @@ def mode_styles(runs: list[ModeRun], points: int = 0, markers_per_curve: int = 9
 
 
 def apply_log_axis_style(axis, *, log_y: bool = False) -> None:
-    """Apply the shared heavy-frame, mirrored-tick treatment to logarithmic axes."""
+    """Apply the shared mirrored-tick treatment to logarithmic axes."""
     for spine in axis.spines.values():
-        spine.set_linewidth(1.8)
+        spine.set_linewidth(0.8)
     axis.tick_params(axis="x", which="major", direction="in", top=True, bottom=True,
-                     width=1.6, length=8)
+                     width=0.8, length=4)
     axis.tick_params(axis="x", which="minor", direction="in", top=True, bottom=True,
-                     width=1.1, length=4.5)
+                     width=0.6, length=2.2)
     axis.tick_params(axis="y", which="major", direction="in", left=True, right=True,
-                     width=1.6, length=8)
+                     width=0.8, length=4)
     if log_y:
         axis.tick_params(axis="y", which="minor", direction="in", left=True, right=True,
-                         width=1.1, length=4.5)
+                         width=0.6, length=2.2)
 
 
 def add_encoding_legend(figure, runs: list[ModeRun], *, show_wall_markers: bool) -> None:
@@ -732,11 +741,11 @@ def add_encoding_legend(figure, runs: list[ModeRun], *, show_wall_markers: bool)
     shown_n = [n for n in angular_indices if any(entry.n == n for entry in runs)]
     shown_m = [m for m in radial_indices if any(entry.m == m for entry in runs)]
     colour_handles = [
-        Line2D([0], [0], color=colour_by_n[n], linewidth=2.4, label=rf"$n = {n}$")
+        Line2D([0], [0], color=colour_by_n[n], linewidth=1.6, label=rf"$n = {n}$")
         for n in shown_n
     ]
     linestyle_handles = [
-        Line2D([0], [0], color="#303030", linestyle=linestyle_by_m[m], linewidth=2.4,
+        Line2D([0], [0], color="#303030", linestyle=linestyle_by_m[m], linewidth=1.2,
                label=rf"$m = {m}$")
         for m in shown_m
     ]
@@ -753,9 +762,9 @@ def add_encoding_legend(figure, runs: list[ModeRun], *, show_wall_markers: bool)
 
     columns = min(7, max(1, math.ceil(len(handles) / 2)))
     figure.legend(
-        handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.05), ncol=columns,
-        framealpha=0.92, fontsize=LEGEND_LABEL_FONT_SIZE,
-        handlelength=2.4, labelspacing=0.55, columnspacing=1.1, borderpad=0.55,
+        handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.0), ncol=columns,
+        frameon=False, fontsize=LEGEND_LABEL_FONT_SIZE,
+        handlelength=2.8, labelspacing=0.4, columnspacing=1.2, borderpad=0.3,
     )
 
 
@@ -778,7 +787,7 @@ def add_rate_inset(axis, entries: list[ModeRun], styles: dict[int, dict]) -> Non
         style = styles[id(entry)]
         inset.plot(
             kappa[visible], entry.rate[1:][visible] / entry.beta**2,
-            color=style["color"], linestyle=style["linestyle"], linewidth=1.25,
+            color=style["color"], linestyle=style["linestyle"], linewidth=GUIDE_LINE_WIDTH,
         )
 
     # Linear in the ratio: over this range the rates stay within a fraction of a percent
@@ -788,14 +797,13 @@ def add_rate_inset(axis, entries: list[ModeRun], styles: dict[int, dict]) -> Non
     inset.margins(y=0.08)
     inset.set_facecolor("white")
     inset.patch.set_alpha(0.97)
-    inset.grid(True, which="major", linestyle="--", linewidth=0.55, alpha=0.35)
-    inset.grid(True, which="minor", linestyle=":", linewidth=0.35, alpha=0.18)
+    inset.grid(True, which="major", linestyle="--", linewidth=0.5, alpha=0.35)
     for spine in inset.spines.values():
-        spine.set_linewidth(1.15)
+        spine.set_linewidth(0.7)
     inset.tick_params(which="major", direction="in", top=True, right=True,
-                      width=1.0, length=4.0, labelsize=INSET_TICKS_FONTSIZE)
+                      width=0.7, length=3.0, labelsize=INSET_TICKS_FONTSIZE)
     inset.tick_params(which="minor", direction="in", top=True, right=True,
-                      width=0.7, length=2.3)
+                      width=0.5, length=1.8)
     # The labels go on the right, where the panel has no curves.
     inset.tick_params(axis="y", which="both", labelleft=False, labelright=True)
     inset.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(0.001))
@@ -805,13 +813,13 @@ def add_rate_inset(axis, entries: list[ModeRun], styles: dict[int, dict]) -> Non
     # A restrained dashed callout guides the eye from the low-kappa region to the inset.
     # Matplotlib selects the two unobtrusive connector corners automatically.
     _, connectors = axis.indicate_inset_zoom(
-        inset, edgecolor="#303030", linewidth=0.9, linestyle=(0, (5, 4)),
-        alpha=0.52, zorder=4,
+        inset, edgecolor="#303030", linewidth=0.6, linestyle=(0, (4, 3)),
+        alpha=0.6, zorder=4,
     )
     # Matplotlib 3.6 forwards ``linestyle`` to the rectangle but not to the four
     # ConnectionPatch artists returned alongside it.
     for connector in connectors:
-        connector.set_linestyle((0, (5, 4)))
+        connector.set_linestyle((0, (4, 3)))
 
 
 def figure_rates(runs: list[ModeRun]) -> None:
@@ -819,8 +827,9 @@ def figure_rates(runs: list[ModeRun]) -> None:
     import matplotlib.pyplot as plt
 
     styles = mode_styles(runs)
+    mm = 1.0 / 25.4
     figure, axes = plt.subplots(
-        2, 1, figsize=(20.0, 13.75), sharex=True,
+        2, 1, figsize=(RATES_FIGURE_WIDTH_MM * mm, RATES_FIGURE_HEIGHT_MM * mm), sharex=True,
         gridspec_kw={"hspace": 0.06},
     )
     axes_by_problem = {problem.name: axis for problem, axis in zip(PROBLEMS, axes)}
@@ -830,18 +839,18 @@ def figure_rates(runs: list[ModeRun]) -> None:
         axis = axes_by_problem[entry.problem.name]
         axis.plot(
             kappa, entry.rate[1:] / entry.beta**2,
-            color=style["color"], linestyle=style["linestyle"],
+            color=style["color"], linestyle=style["linestyle"], linewidth=CURVE_LINE_WIDTH,
         )
         if SHOW_RATE_GUIDES:
             if entry.bessel_zero > 0.0:
                 asymptote = entry.bessel_zero / (entry.beta**2 * np.sqrt(kappa))
                 visible = asymptote < 1.0
                 axis.plot(kappa[visible], asymptote[visible], color=style["color"],
-                          linewidth=1.4, alpha=0.32, linestyle=style["linestyle"])
+                          linewidth=GUIDE_LINE_WIDTH, alpha=0.45, linestyle=style["linestyle"])
     for axis in axes:
         if SHOW_RATE_GUIDES:
             # All normalised branches share the same bare limit at kappa = 0.
-            axis.axhline(1.0, color="#202020", linewidth=0.9, alpha=0.5,
+            axis.axhline(1.0, color="#202020", linewidth=0.6, alpha=0.6,
                          linestyle=(0, (1, 2)))
         axis.set_xscale("log")
         axis.set_yscale("log")
@@ -851,13 +860,12 @@ def figure_rates(runs: list[ModeRun]) -> None:
             labelpad=Y_AXIS_LABEL_PAD,
         )
         axis.tick_params(axis="y", which="both", labelsize=TICKS_FONTSIZE)
-        axis.grid(True, which="major", linestyle="--", linewidth=0.9, alpha=0.4)
-        axis.grid(True, which="minor", linestyle=":", linewidth=0.5, alpha=0.2)
+        axis.grid(True, which="major", linestyle="--", linewidth=0.5, alpha=0.4)
         apply_log_axis_style(axis, log_y=True)
     for problem, axis in zip(PROBLEMS, axes):
         axis.text(
-            1.0, 1.0, problem.short, transform=axis.transAxes,
-            rotation=270, rotation_mode="anchor", ha="left", va="bottom",
+            1.015, 0.5, problem.short, transform=axis.transAxes,
+            rotation=270, ha="left", va="center",
             fontsize=PANEL_TITLE_FONT_SIZE, clip_on=False,
         )
         add_rate_inset(
@@ -869,8 +877,8 @@ def figure_rates(runs: list[ModeRun]) -> None:
     axes[-1].tick_params(axis="x", which="both", labelsize=TICKS_FONTSIZE)
 
     add_encoding_legend(figure, runs, show_wall_markers=False)
-    figure.subplots_adjust(left=0.10, right=0.96, top=0.95, bottom=0.27)
-    save(figure, "Figure_1b")
+    figure.subplots_adjust(left=0.105, right=0.955, top=0.985, bottom=0.235)
+    save(figure, "Figure_1b", tight=False)
     plt.close(figure)
 
 
@@ -972,13 +980,14 @@ def main() -> None:
         "text.usetex": USE_TEX,
         "font.family": "serif",
         "font.serif": ["Computer Modern Roman"],
-        "font.size": 20,
-        "axes.labelsize": 24,
-        "xtick.labelsize": 19,
-        "ytick.labelsize": 19,
+        "font.size": AXIS_LABEL_FONTSIZE,
+        "axes.labelsize": AXIS_LABEL_FONTSIZE,
+        "xtick.labelsize": TICKS_FONTSIZE,
+        "ytick.labelsize": TICKS_FONTSIZE,
         "legend.fontsize": LEGEND_LABEL_FONT_SIZE,
-        "lines.linewidth": 2.2,
-        "lines.markersize": 7,
+        "lines.linewidth": CURVE_LINE_WIDTH,
+        "lines.markersize": 4,
+        "text.latex.preamble": TEX_PREAMBLE,
     })
 
     data, loaded_from_cache = get_plot_data()

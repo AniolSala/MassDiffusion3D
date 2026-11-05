@@ -39,20 +39,30 @@ The remaining arrays (`index`, `alpha`, `base_roots`, `alpha_row`, `row_size`, `
 
 **`nusselt_convergence_plain_vs_split.csv`** (Fig. 4, `nusselt_convergence.py`). One row per solve, with columns `Pe`, `x`, `beta` (`beta_K`), `K`, `Nu_plain` (plain truncation of the series) and `Nu_split` (with the asymptotic tail). The rows with `beta = 1600` are the reference of the figure.
 
+**`qep_rates_convergence_data.npz`** (Fig. 10, `qep_rates_convergence.py`). Decay rates of the zero-flux family `n = 1` and of the isothermal family `n = 0` at `Pe = 1, 10, 100`, computed in two ways: as the roots of the characteristic equations of the article, and as the eigenvalues of the quadratic matrix problem of Neuhauser et al. (2025), obtained by projecting the radial equation onto the first `N` bare modes. The radial index `m` is zero-based.
+
+| Array | Shape | Content |
+|---|---|---|
+| `configuration` | scalar | JSON string with the settings the data were computed with |
+| `basis_sizes` | (32,) | number `N` of bare modes in the matrix problem, from 2 to 300 |
+| `beta` | (2, 300) | bare eigenvalues `beta_nm` of the two families (zero flux, isothermal) |
+| `exact` | (2, 3, 300) | decay rates `Lambda_nm` from the characteristic equations, per family and Péclet number |
+| `ritz` | (2, 3, 32, 300) | decay rates `Lambda^(N)_nm` of the matrix problem, per family, Péclet number and `N`; NaN for `m >= N` |
+
 ## Finite-element comparison (folder `fem/`)
 
 The finite-element solutions were computed with Kratos Multiphysics (ConvectionDiffusionApplication) on a pipe of radius 1 and length 2, meshed with linear tetrahedra of size `h = 0.1, 0.05, 0.02`, for `Pe = 10, 100, 1000` and both problems (`stratified_layers`, the stratified inlet with a zero-flux wall, and `graetz`, the isothermal Graetz problem). The HDF5 files store their full run configuration as a JSON string in the root attribute `metadata_json`. In that configuration and in the files of the timing benchmark, file paths are reduced to file names and the host name is removed; everything else is as recorded.
 
-**`bare_vs_finite_peclet_vs_beta_squared_8b6d347e6c916693.h5`** (Fig. 6). Error between the truncated series and the finite-element solution on the cross-section `x* = 1`, against the truncation (20 values of `beta_K` from 12 to 400):
+**`bare_vs_finite_peclet_vs_beta_squared_8b6d347e6c916693.h5`** (Figs. 6a and 7). Error between the truncated series and the finite-element solution on the cross-section `x* = 1`, against the truncation (20 values of `beta_K` from 12 to 400):
 
 - `<problem>/beta_k_squared`: the values of `beta_K^2`.
 - `<problem>/peclet_<i>/mesh_<j>/<variant>/l2` and `.../linf`: the errors in the two norms of the article, for `variant` = `bare` (classical series) or `finite_peclet`. The attributes of `peclet_<i>` and `mesh_<j>` give the Péclet number and the mesh size.
-- `section_fields`: the cross-section fields of Fig. 6b (at `beta_K = 400` and `h = 0.02`): node coordinates `r` and `phi`, and, under `<problem>/peclet_<i>`, the fields `bare`, `finite_peclet` and `fem`.
+- `section_fields`: the cross-section fields of Fig. 7 (at `beta_K = 400` and `h = 0.02`): node coordinates `r` and `phi`, and, under `<problem>/peclet_<i>`, the fields `bare`, `finite_peclet` and `fem`.
 - `fem_element_counts`: number of elements of each mesh.
 
-**`bare_vs_finite_peclet_vs_x_97012537d5087dad.h5`** (Fig. S1). The same errors against the axial position, at fixed truncation: dataset `x_physical` (the positions `x*`) and `<problem>/peclet_<i>/mesh_<j>/<variant>/{l2, linf}`.
+**`bare_vs_finite_peclet_vs_x_97012537d5087dad.h5`** (Fig. 6b). The same errors against the axial position, at fixed truncation: dataset `x_physical` (the positions `x*`) and `<problem>/peclet_<i>/mesh_<j>/<variant>/{l2, linf}`.
 
-**`benchmark_03af62a81f84e4c3/`** (Figs. S2 and S3, Table S1). Wall-time and memory benchmark of the finite-element and the series solutions:
+**`benchmark_03af62a81f84e4c3/`** (Figs. 8 and 9, Table S1). Wall-time and memory benchmark of the finite-element and the series solutions:
 
 - `results.json`: every timed run (setup time `T1` and evaluation time `T2`, per problem, Péclet number, mesh and number of threads), with the per-cell summaries, the thread scaling and the errors of the compared fields.
 - `benchmark_memory.json`: peak memory of each run, in MiB, with the definitions of the measured quantities.

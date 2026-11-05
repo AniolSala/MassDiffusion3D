@@ -76,6 +76,18 @@ EXACT_LINESTYLES = (
 )
 LINE_WIDTH = 1.0
 
+# Printed size (the article's text width is 160 mm), so the sizes below are printed points.
+FIGURE_WIDTH_MM = 160.0
+FIGURE_HEIGHT_MM = 70.0
+LABEL_FONT_SIZE = 10.5
+TICK_FONT_SIZE = 9.5
+ANNOTATION_FONT_SIZE = 9.5
+LEGEND_FONT_SIZE = 9.5
+AXES_LINE_WIDTH = 0.8
+# Sub- and superscripts at 9 pt keep every printed capital and numeral at least 2 mm high.
+TEX_PREAMBLE = "".join(rf"\DeclareMathSizes{{{size:g}}}{{{size:g}}}{{9}}{{9}}"
+                       for size in (9, 9.5, 10, 10.5, 11, 12))
+
 
 @dataclass(frozen=True)
 class Problem:
@@ -225,11 +237,13 @@ def plot_mode(axis, n: int, m: int, radii: np.ndarray, curves: dict[str, np.ndar
         axis.plot(radii, curves[f"kappa{kappa:g}"], color="#202020", linestyle=linestyle,
                   linewidth=LINE_WIDTH)
 
-    axis.axhline(0.0, color="#9A9A9A", linewidth=0.45, alpha=0.65, zorder=0)
+    axis.axhline(0.0, color="#808080", linewidth=0.6, zorder=0)
     axis.set_xlim(0.0, 1.0)
-    axis.grid(True, linestyle=":", linewidth=0.7, alpha=0.35)
-    axis.text(0.96, 0.92, rf"$n = {n},\; m = {m}$", transform=axis.transAxes,
-              ha="right", va="top", fontsize=17)
+    axis.set_xticks([0.0, 0.5, 1.0], ["0", "0.5", "1"])
+    axis.grid(True, linestyle=":", linewidth=0.5, alpha=0.5)
+    axis.text(0.96, 0.95, rf"$n = {n},\; m = {m}$", transform=axis.transAxes,
+              ha="right", va="top", fontsize=ANNOTATION_FONT_SIZE,
+              bbox=dict(boxstyle="square,pad=0.1", facecolor="white", edgecolor="none"))
 
 
 def main() -> None:
@@ -248,11 +262,12 @@ def main() -> None:
         "text.usetex": USE_TEX,
         "font.family": "serif",
         "font.serif": ["Computer Modern Roman"],
-        "font.size": 16,
-        "axes.labelsize": 20,
-        "xtick.labelsize": 15,
-        "ytick.labelsize": 15,
-        "axes.linewidth": 1.4,
+        "font.size": LABEL_FONT_SIZE,
+        "axes.labelsize": LABEL_FONT_SIZE,
+        "xtick.labelsize": TICK_FONT_SIZE,
+        "ytick.labelsize": TICK_FONT_SIZE,
+        "axes.linewidth": AXES_LINE_WIDTH,
+        "text.latex.preamble": TEX_PREAMBLE,
     })
     import matplotlib.pyplot as plt
 
@@ -262,7 +277,8 @@ def main() -> None:
     radii = np.linspace(0.0, 1.0, RADIAL_POINTS)
     curves = get_curves(radii)
     column_count = max(len(NEUMANN_MODES), len(DIRICHLET_MODES))
-    figure, axes = plt.subplots(2, column_count, figsize=(3.0 * column_count + 1.9, 5.8),
+    mm = 1.0 / 25.4
+    figure, axes = plt.subplots(2, column_count, figsize=(FIGURE_WIDTH_MM * mm, FIGURE_HEIGHT_MM * mm),
                                  sharex=True, squeeze=False)
     for row, (problem, modes) in enumerate(zip(PROBLEMS, (NEUMANN_MODES, DIRICHLET_MODES))):
         for column, (n, m) in enumerate(modes):
@@ -277,23 +293,23 @@ def main() -> None:
     for axis in axes[-1, :]:
         if axis.get_visible():
             axis.set_xlabel(r"$r$")
-    figure.text(0.792, 0.72, "Neumann", rotation="vertical", va="center", ha="center", fontsize=17)
-    figure.text(0.792, 0.28, "Dirichlet", rotation="vertical", va="center", ha="center", fontsize=17)
+    for row, label in enumerate(("Neumann", "Dirichlet")):
+        axes[row, -1].text(1.06, 0.5, label, transform=axes[row, -1].transAxes, rotation="vertical",
+                           va="center", ha="left", fontsize=LABEL_FONT_SIZE)
     figure.legend(
-        [Line2D([], [], color="#202020", linewidth=2.6, linestyle="-")]
-        + [Line2D([], [], color="#202020", linewidth=2.3, linestyle=style)
+        [Line2D([], [], color="#202020", linewidth=1.2, linestyle="-")]
+        + [Line2D([], [], color="#202020", linewidth=1.2, linestyle=style)
            for style in EXACT_LINESTYLES[:len(KAPPA_VALUES)]],
         [r"$\kappa = 0$"]
         + [rf"$\kappa = {kappa:g}$" for kappa in KAPPA_VALUES],
-        loc="center left", bbox_to_anchor=(0.805, 0.50), framealpha=0.92,
-        fontsize=14, handlelength=1.8, handletextpad=0.65, labelspacing=0.55,
-        borderpad=0.55,
+        loc="upper center", bbox_to_anchor=(0.5, 1.0), ncol=len(KAPPA_VALUES) + 1, frameon=False,
+        fontsize=LEGEND_FONT_SIZE, handlelength=2.6, handletextpad=0.5, columnspacing=1.4,
     )
-    figure.subplots_adjust(left=0.08, right=0.78, top=0.95, bottom=0.12, wspace=0.18, hspace=0.16)
+    figure.subplots_adjust(left=0.085, right=0.955, top=0.885, bottom=0.145, wspace=0.3, hspace=0.14)
 
     FIGURES_DIRECTORY.mkdir(parents=True, exist_ok=True)
     output = FIGURES_DIRECTORY / "Figure_1a.pdf"
-    figure.savefig(output, bbox_inches="tight")
+    figure.savefig(output)
     plt.close(figure)
     print(f"saved {output}")
 

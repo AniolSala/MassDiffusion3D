@@ -70,8 +70,10 @@ SMOOTHING_INTENSITY = 0.7
 # ============================================================
 
 USE_LATEX = True
-FONT_SIZE = 22
-FIGURE_SIZE = (14.0, 7.8)
+# Printed size (the article's 160 mm text width), so the sizes below are printed points.
+FONT_SIZE = 10
+TICK_FONT_SIZE = 9.5
+FIGURE_SIZE = (160.0 / 25.4, 100.0 / 25.4)
 
 CMAP_NAME = "Spectral_r"
 SURFACE_EDGE_COLOR = (0.0, 0.0, 0.0)
@@ -92,8 +94,8 @@ ROW_LABEL_X = 0.975
 # Minimal coordinate axes drawn on every surface panel.
 AXIS_COLOR = "#777777"
 AXIS_LINE_WIDTH = 0.65
-AXIS_LABEL_SIZE = 20
-AXIS_LABEL_PAD = -13
+AXIS_LABEL_SIZE = 9.5
+AXIS_LABEL_PAD = -12
 PSI_LABEL_POSITION = (-0.005, 0.735)  # axes coordinates, at the z-axis tip
 
 # Perspective guide grid.  The alpha is intentionally low so the grid explains
@@ -103,19 +105,19 @@ GRID_LINE_WIDTH = 0.50
 GRID_LINE_STYLE = "-"
 GRID_N_PARTITIONS = 4
 
-# Axial annotation, drawn in figure coordinates below the bottom row.
-X_FORMAT = r"${:g}$"
+# Axial annotation, drawn in figure coordinates below the bottom row: a plain dark
+# arrow with the x value of each column written below it.
+X_FORMAT = r"$x = {:g}$"
 X_ARROW_LABEL = r"$x$"
-X_ARROW_COLOR = "#3A3A3A"
-X_ARROW_ALPHA = 0.10
-X_ARROW_SHAFT_HALF_HEIGHT = 0.022
-X_ARROW_HEAD_LENGTH = 0.038
-X_ARROW_HEAD_HALF_HEIGHT = 0.033
-X_ARROW_VERTICAL_GAP = 0.075
+X_ARROW_COLOR = "#202020"
+X_ARROW_LINE_WIDTH = 1.0
+X_ARROW_HEAD_SIZE = 9.0
+X_ARROW_VERTICAL_GAP = 0.035
+X_LABEL_GAP = 0.014
 
 # Shared colour scale (the "legend") above the top row.
 COLORBAR_TICKS = (0.0, 0.25, 0.5, 0.75, 1.0)
-COLORBAR_RECT = (0.12, 0.925, 0.76, 0.022)
+COLORBAR_RECT = (0.16, 0.915, 0.68, 0.024)
 
 OUTPUT_DIR = os.path.join(REPOSITORY, "figures")
 OUTPUT_NAME = "Figure_5"
@@ -123,7 +125,7 @@ DATA_FILE = os.path.join(REPOSITORY, "data_files", "plot_solution_3D.npz")
 FORCE_RECOMPUTE = False  # False: reuse DATA_FILE when its configuration matches
 SAVE_PDF = True
 SAVE_PNG = True
-DPI = 300
+DPI = 600
 SHOW_PLOT = False
 
 if not SHOW_PLOT:
@@ -131,7 +133,7 @@ if not SHOW_PLOT:
 
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
-from matplotlib.patches import Polygon, Rectangle
+from matplotlib.patches import FancyArrowPatch
 from scipy.spatial import Delaunay
 
 import MassDiffusion3Dcpp as MD
@@ -295,6 +297,8 @@ def style_coordinate_axes(ax):
     ax.set_zticklabels([])
     ax.tick_params(axis="both", which="both", length=0, width=0, pad=0)
     ax.grid(True)
+    # Neighbouring panels overlap slightly; a transparent background keeps their labels visible.
+    ax.patch.set_alpha(0.0)
 
     ax.set_xlabel(r"$y$", color=AXIS_COLOR, fontsize=AXIS_LABEL_SIZE,
                   labelpad=AXIS_LABEL_PAD)
@@ -324,45 +328,23 @@ def style_coordinate_axes(ax):
 
 
 def add_x_arrow(fig, bottom_axes):
-    """Cylinder-style axial arrow and x values below the bottom row."""
+    """Axial arrow below the bottom row, with the x value of each column below it."""
     positions = [ax.get_position() for ax in bottom_axes]
     centers = [box.x0 + 0.5 * box.width for box in positions]
     y_arrow = min(box.y0 for box in positions) - X_ARROW_VERTICAL_GAP
-    x_start = centers[0] - 0.052
-    head_tip = centers[-1] + 0.052
-    head_base = head_tip - X_ARROW_HEAD_LENGTH
+    x_start = centers[0] - 0.07
+    head_tip = centers[-1] + 0.07
 
-    # Match cylinder_plot_solution.py: a continuous rectangular shaft and a
-    # separate, elongated triangular head, both broad and very translucent.
-    shaft = Rectangle(
-        (x_start, y_arrow - X_ARROW_SHAFT_HALF_HEIGHT),
-        head_base - x_start,
-        2.0 * X_ARROW_SHAFT_HALF_HEIGHT,
-        transform=fig.transFigure,
-        facecolor=X_ARROW_COLOR,
-        edgecolor="none",
-        alpha=X_ARROW_ALPHA,
-        zorder=20,
-    )
-    head = Polygon(
-        [[head_tip, y_arrow],
-         [head_base, y_arrow + X_ARROW_HEAD_HALF_HEIGHT],
-         [head_base, y_arrow - X_ARROW_HEAD_HALF_HEIGHT]],
-        closed=True,
-        transform=fig.transFigure,
-        facecolor=X_ARROW_COLOR,
-        edgecolor="none",
-        alpha=X_ARROW_ALPHA,
-        zorder=20,
-    )
-    fig.add_artist(shaft)
-    fig.add_artist(head)
-
+    fig.add_artist(FancyArrowPatch(
+        (x_start, y_arrow), (head_tip, y_arrow), transform=fig.transFigure,
+        arrowstyle="-|>", mutation_scale=X_ARROW_HEAD_SIZE, linewidth=X_ARROW_LINE_WIDTH,
+        color=X_ARROW_COLOR, zorder=20,
+    ))
     for center, x_value in zip(centers, X_VALUES):
-        fig.text(center, y_arrow, X_FORMAT.format(x_value),
-                 ha="center", va="center", color=X_ARROW_COLOR,
+        fig.text(center, y_arrow - X_LABEL_GAP, X_FORMAT.format(x_value),
+                 ha="center", va="top", color=X_ARROW_COLOR,
                  fontsize=FONT_SIZE, zorder=21)
-    fig.text(head_tip + 0.010, y_arrow, X_ARROW_LABEL,
+    fig.text(head_tip + 0.008, y_arrow, X_ARROW_LABEL,
              ha="left", va="center", color=X_ARROW_COLOR,
              fontsize=FONT_SIZE, zorder=21)
 
@@ -418,6 +400,9 @@ def make_figure():
         "font.family": "serif",
         "font.serif": ["Computer Modern"],
         "font.size": FONT_SIZE,
+        "text.latex.preamble": "".join(
+            rf"\DeclareMathSizes{{{size:g}}}{{{size:g}}}{{9}}{{9}}"
+            for size in (9, 9.5, 10, 10.5, 11, 12)),
     })
 
     y, z, triangles, rows = get_fields()
@@ -435,8 +420,8 @@ def make_figure():
         subplot_kw={"projection": "3d"},
     )
     fig.patch.set_facecolor("white")
-    fig.subplots_adjust(left=0.015, right=0.945, bottom=0.145, top=0.895,
-                        wspace=-0.20, hspace=0.06)
+    fig.subplots_adjust(left=0.015, right=0.945, bottom=0.15, top=0.885,
+                        wspace=-0.20, hspace=0.10)
 
     for row_index, fields in enumerate(rows):
         for column_index, field in enumerate(fields):
@@ -458,7 +443,9 @@ def make_figure():
                             ticks=COLORBAR_TICKS)
     colorbar.ax.xaxis.set_ticks_position("top")
     colorbar.outline.set_linewidth(0.6)
-    colorbar.ax.tick_params(length=2.5, pad=1.5, labelsize=FONT_SIZE - 2)
+    colorbar.ax.tick_params(length=2.5, pad=1.5, labelsize=TICK_FONT_SIZE)
+    cax.text(-0.015, 0.5, r"$\psi$", transform=cax.transAxes, ha="right", va="center",
+             fontsize=FONT_SIZE)
 
     return fig
 

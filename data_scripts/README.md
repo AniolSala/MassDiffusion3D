@@ -5,7 +5,7 @@ This folder holds the scripts that reproduce the figures and tables of the artic
 ## Requirements
 
 - The `MassDiffusion3Dcpp` module of this repository, built and importable as described in sections 3 and 4 of the [repository README](../README.md). The scripts read the root tables from `src/` of this repository.
-- Python 3 with NumPy and Matplotlib. `plot_solution_3D.py` also needs SciPy.
+- Python 3 with NumPy and Matplotlib. `plot_solution_3D.py` and `qep_rates_convergence.py` also need SciPy.
 - A LaTeX installation: the labels are typeset with Matplotlib's `text.usetex`. In every script except `nusselt_convergence.py`, setting `USE_TEX` (or `USE_LATEX`) to `False` draws the figure without LaTeX, with slightly different lettering.
 - `h5py`, only to read the finite-element data files.
 
@@ -29,12 +29,13 @@ Every script writes its figure to `figures/` and its numerical data to `data_fil
 | Fig. 3 | `nusselt_curves.py` | `Figure_3.pdf` | `nusselt_curves.csv`, `nusselt_developed.csv`, `nusselt_developed.tex`, `nusselt_at_decades.json` |
 | Fig. 4 | `nusselt_convergence.py` | `Figure_4.pdf` | `nusselt_convergence_plain_vs_split.csv` |
 | Fig. 5 | `plot_solution_3D.py` | `Figure_5.pdf`, `.png` | `plot_solution_3D.npz` |
-| Fig. 6 | – | – | `fem/bare_vs_finite_peclet_vs_beta_squared_8b6d347e6c916693.h5` |
-| Fig. S1 | – | – | `fem/bare_vs_finite_peclet_vs_x_97012537d5087dad.h5` |
-| Figs. S2, S3, Table S1 | – | – | `fem/benchmark_03af62a81f84e4c3/` |
+| Figs. 6a, 7 | – | – | `fem/bare_vs_finite_peclet_vs_beta_squared_8b6d347e6c916693.h5` |
+| Fig. 6b | – | – | `fem/bare_vs_finite_peclet_vs_x_97012537d5087dad.h5` |
+| Figs. 8, 9, Table S1 | – | – | `fem/benchmark_03af62a81f84e4c3/` |
+| Fig. 10 | `qep_rates_convergence.py` | `Figure_10.pdf`, `.png` | `qep_rates_convergence_data.npz` |
 | Table S2 | `nusselt_curves.py` | – | `nusselt_classical_table.csv` |
 
-Figures S1–S3 and Tables S1–S2 are in the Supplementary Material of the article. The data files are described in [data_files/README.md](../data_files/README.md).
+Tables S1–S2 are in the Supplementary Material of the article. The data files are described in [data_files/README.md](../data_files/README.md).
 
 ## Cached data
 
@@ -43,7 +44,7 @@ Every script stores the data it plots in `data_files/`, and on the next run redr
 - `nusselt_curves.py` checks only that the columns of `data_files/nusselt_curves.csv` match its Péclet numbers.
 - `nusselt_convergence.py` stores every solve in `data_files/nusselt_convergence_plain_vs_split.csv` as soon as it finishes, and computes only the rows that are missing. Delete the file to recompute everything; the reference at `REFERENCE_BETA = 1600` is the expensive part.
 
-Computing Fig. 2 from scratch takes about five minutes, and Figs. 1a, 1b and 5 less than half a minute each. The full recomputations of Figs. 3 and 4 were not timed.
+Computing Fig. 2 from scratch takes about five minutes, Fig. 10 about four minutes, and Figs. 1a, 1b and 5 less than half a minute each. The full recomputations of Figs. 3 and 4 were not timed.
 
 ## Licence
 
@@ -51,4 +52,4 @@ The scripts in this folder are covered by the BSD-3-Clause licence of the reposi
 
 ## Finite-element data
 
-Figure 6, Figures S1–S3 and Table S1 compare the series with finite-element solutions computed with Kratos Multiphysics (ConvectionDiffusionApplication). The finite-element computations need Kratos, its case files and the meshes, so their scripts are not included; their results are in `data_files/fem/`.
+Figures 6–9 and Table S1 compare the series with finite-element solutions computed with Kratos Multiphysics (ConvectionDiffusionApplication). The finite-element computations need Kratos, its case files and the meshes, so their scripts are not included; their results are in `data_files/fem/`.

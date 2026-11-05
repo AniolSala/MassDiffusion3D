@@ -82,6 +82,9 @@ AXES_LINE_WIDTH = 0.8
 GRID_MAJOR_ALPHA = 0.40
 GRID_MINOR_ALPHA = 0.20
 LEGEND_COLUMNS = len(PE_VALUES)
+# Sub- and superscripts at 9 pt keep every printed capital and numeral at least 2 mm high.
+TEX_PREAMBLE = "".join(rf"\DeclareMathSizes{{{size:g}}}{{{size:g}}}{{9}}{{9}}"
+                       for size in (9, 9.5, 10, 10.5, 11, 12))
 
 matplotlib.rcParams.update({
     "text.usetex": True,
@@ -93,6 +96,7 @@ matplotlib.rcParams.update({
     "ytick.labelsize": TICK_FONT_SIZE,
     "legend.fontsize": LEGEND_FONT_SIZE,
     "axes.linewidth": AXES_LINE_WIDTH,
+    "text.latex.preamble": TEX_PREAMBLE,
 })
 
 CSV_COLUMNS = ("Pe", "x", "beta", "K", "Nu_plain", "Nu_split")
@@ -218,13 +222,13 @@ def plot(rows: dict) -> None:
             ax.yaxis.set_minor_locator(LogLocator(base=10, subs=np.arange(2, 10), numticks=100))
             ax.yaxis.set_minor_formatter(NullFormatter())
             ax.grid(True, which="major", linestyle="--", linewidth=0.6, alpha=GRID_MAJOR_ALPHA)
-            ax.grid(True, which="minor", linestyle=":", linewidth=0.4, alpha=GRID_MINOR_ALPHA)
+            ax.grid(True, which="minor", linestyle=":", linewidth=0.5, alpha=GRID_MINOR_ALPHA)
             ax.tick_params(which="major", direction="in", top=True, right=True,
                            width=AXES_LINE_WIDTH, length=4)
             ax.tick_params(which="minor", direction="in", top=True, right=True,
                            width=0.6, length=2)
 
-        plain_ax.set_ylabel(r"$|Nu_K-Nu_N|\,/\,Nu_N$", labelpad=12)
+        plain_ax.set_ylabel(r"$|\mathrm{Nu}_K-\mathrm{Nu}_N|\,/\,\mathrm{Nu}_N$", labelpad=12)
         asymptotic_ax.tick_params(axis="y", labelleft=False)
         if row == 0:
             plain_ax.set_title("Plain", fontsize=PANEL_FONT_SIZE)

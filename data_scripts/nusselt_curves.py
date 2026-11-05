@@ -64,16 +64,22 @@ JSON_X_VALUES = (1e-4, 1e-3, 1e-2, 1e-1, 1.0)
 JSON_FILENAME = "nusselt_at_decades.json"
 CLASSICAL_TABLE_FILENAME = "nusselt_classical_table.csv"
 USE_TEX = True
-FIGURE_SIZE = (8.2, 5.6)
-FONT_SIZE = 20
-LABEL_FONT_SIZE = 24
-TICK_FONT_SIZE = 18
-LEGEND_FONT_SIZE = 14
+# Printed size, so the sizes below are printed points.
+FIGURE_WIDTH_MM = 140.0
+FIGURE_HEIGHT_MM = 96.0
+FONT_SIZE = 10
+LABEL_FONT_SIZE = 10.5
+TICK_FONT_SIZE = 9.5
+LEGEND_FONT_SIZE = 9.5
+CURVE_LABEL_FONT_SIZE = 9
 GRID_MAJOR_ALPHA = 0.40
 GRID_MINOR_ALPHA = 0.20
 LEGEND_COLUMNS = 2
-MARKER_SIZE = 1.0
-CURVE_MARKERS = ("o", "s", "^", "v", "D", "P", "X", "h", "p")
+CURVE_LINE_WIDTH = 1.2
+REFERENCE_MARKER_SIZE = 4.5
+# Sub- and superscripts at 9 pt keep every printed capital and numeral at least 2 mm high.
+TEX_PREAMBLE = "".join(rf"\DeclareMathSizes{{{size:g}}}{{{size:g}}}{{9}}{{9}}"
+                       for size in (9, 9.5, 10, 10.5, 11, 12))
 # Keep all Péclet-number curves in one visual family.  The increasing shade
 # follows the order in PE_VALUES, while markers retain an additional cue.
 PE_COLORS = plt.get_cmap("Blues")(np.linspace(0.30, 0.99, len(PE_VALUES)))
@@ -87,7 +93,7 @@ CURVE_LABEL_X = 2.5e-4
 CURVE_LABEL_X_BY_PE = {100: 3.2e-4, 1000: 2.15e-4}     # where the default is crowded
 CURVE_LABEL_OFFSETS = {1000: 9.0, math.inf: -10.0}  # points
 CURVE_LABEL_COLOR = "#202020"
-ASYMPTOTE_LINEWIDTH = 1.0
+ASYMPTOTE_LINEWIDTH = 0.9
 
 # Shah and London (1978), circular duct Table 6, retained for the generated
 # fully developed comparison table below. No external data are drawn in the figure.
@@ -115,7 +121,8 @@ matplotlib.rcParams.update({
     "xtick.labelsize": TICK_FONT_SIZE,
     "ytick.labelsize": TICK_FONT_SIZE,
     "legend.fontsize": LEGEND_FONT_SIZE,
-    "axes.linewidth": 1.6,
+    "axes.linewidth": 0.8,
+    "text.latex.preamble": TEX_PREAMBLE,
 })
 
 
@@ -199,7 +206,7 @@ def label_curve(ax, xs, nu, pe: float) -> None:
     text = r"$\mathrm{Pe}=\infty$" if math.isinf(pe) else rf"$\mathrm{{Pe}}={pe:g}$"
     ax.annotate(text, (xs[i], nu[i]), xytext=(0.0, CURVE_LABEL_OFFSETS.get(pe, 0.0)),
                 textcoords="offset points", rotation=angle, rotation_mode="anchor",
-                ha="center", va="center", fontsize=LEGEND_FONT_SIZE, color=CURVE_LABEL_COLOR,
+                ha="center", va="center", fontsize=CURVE_LABEL_FONT_SIZE, color=CURVE_LABEL_COLOR,
                 bbox=dict(boxstyle="square,pad=0.15", facecolor="white", edgecolor="none"),
                 zorder=5)
 
@@ -219,15 +226,13 @@ def write_classical_table(path: Path) -> None:
 
 def plot_curves(xs, curves, developed_by_pe=None) -> None:
     """Render the configured figure from computed or cached curve data."""
-    if len(CURVE_MARKERS) < len(PE_VALUES):
-        raise ValueError("CURVE_MARKERS must provide a distinct marker for every Péclet value")
-    fig, ax = plt.subplots(figsize=FIGURE_SIZE)
-    for pe, marker, color in zip(PE_VALUES, CURVE_MARKERS, PE_COLORS):
+    mm = 1.0 / 25.4
+    fig, ax = plt.subplots(figsize=(FIGURE_WIDTH_MM * mm, FIGURE_HEIGHT_MM * mm))
+    for pe, color in zip(PE_VALUES, PE_COLORS):
         nu = curves[pe]
         developed = (nu[-1] if developed_by_pe is None else developed_by_pe[pe])
-        line, = ax.loglog(xs, nu, "--" if math.isinf(pe) else "-", linewidth=2.0,
-                          color=color, marker=marker,
-                          markersize=MARKER_SIZE)
+        line, = ax.loglog(xs, nu, "--" if math.isinf(pe) else "-", linewidth=CURVE_LINE_WIDTH,
+                          color=color)
         if DRAW_ASYMPTOTES and not math.isinf(pe):
             asymptote = 4.0 / (math.pi * pe * xs)
             above = asymptote >= developed
@@ -235,20 +240,21 @@ def plot_curves(xs, curves, developed_by_pe=None) -> None:
                       linewidth=ASYMPTOTE_LINEWIDTH)
         for source, marker in ((HENNECKE_TABLE_15, "s"), (LAHJOMRI_FIG2, "^")):
             if source.get(pe):
-                ax.loglog(*zip(*source[pe]), marker, color=line.get_color(), fillstyle="none")
+                ax.loglog(*zip(*source[pe]), marker, color=line.get_color(),
+                          markersize=REFERENCE_MARKER_SIZE)
 
     ax.loglog([2.0 * x_star for x_star, _ in CLASSICAL_LOCAL_TABLE],
-              [value for _, value in CLASSICAL_LOCAL_TABLE], "ko", fillstyle="none",
-              label="Shah--London" if USE_TEX else "Shah-London")
+              [value for _, value in CLASSICAL_LOCAL_TABLE], "o", color="black",
+              markersize=REFERENCE_MARKER_SIZE, zorder=6,
+              label="Shah and London" if USE_TEX else "Shah-London")
     ax.set(xlabel=r"$x$", ylabel=r"$\mathrm{Nu}_K(x)$", xlim=(xs[0], xs[-1]), ylim=(1.0, 3e4))
     ax.xaxis.set_minor_locator(LogLocator(base=10, subs=np.arange(2, 10)))
     ax.yaxis.set_minor_locator(LogLocator(base=10, subs=np.arange(2, 10)))
     ax.xaxis.set_minor_formatter(NullFormatter())
     ax.yaxis.set_minor_formatter(NullFormatter())
-    ax.grid(True, which="major", linestyle="--", linewidth=0.9, alpha=GRID_MAJOR_ALPHA)
-    ax.grid(True, which="minor", linestyle=":", linewidth=0.5, alpha=GRID_MINOR_ALPHA)
-    ax.tick_params(which="major", direction="in", top=True, right=True, width=1.6, length=8)
-    ax.tick_params(which="minor", direction="in", top=True, right=True, width=1.1, length=4.5)
+    ax.grid(True, which="major", linestyle="--", linewidth=0.5, alpha=GRID_MAJOR_ALPHA)
+    ax.tick_params(which="major", direction="in", top=True, right=True, width=0.8, length=4)
+    ax.tick_params(which="minor", direction="in", top=True, right=True, width=0.6, length=2.2)
     ax.legend(ncol=LEGEND_COLUMNS, frameon=False, columnspacing=1.2, handlelength=2.4,
               loc="upper right")
     fig.tight_layout()
